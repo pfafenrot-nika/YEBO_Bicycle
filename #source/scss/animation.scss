@@ -1,0 +1,114 @@
+// Анимация блоков на странице при скролле
+
+@media (min-width: 650px) {
+	// Общие свойства
+	._anim-items {
+		transition: all 1s ease 0s;
+		opacity: 0;
+		&._active {
+			opacity: 1;
+		}
+	}
+
+	// Появление блока "A new generation.."
+	.generation._anim-items {
+		transform: translate(0, 50%);
+		&._active {
+			transform: translate(0, 0);
+		}
+	}
+
+	// Поочередное появление блоков в "Бренде"
+	.brands {
+		overflow: hidden;
+		// Блок с текстом
+		.brands__column._anim-items {
+			transform: translate(0, 50%);
+			&._active {
+				transform: translate(0, 0);
+			}
+		}
+		// Большая картинка
+		.brands__column_b._anim-items {
+			transform: translate(-50%, 0);
+			&._active {
+				transform: translate(0, 0);
+			}
+		}
+		// Маленькая картинка
+		.brands__image._anim-items {
+			transform: translate(0, 50%);
+			&._active {
+				transform: translate(0, 0);
+			}
+		}
+	}
+	// Появление большого блока справа-налево
+	.brands_rev {
+		// Большая картинка
+		.brands__column_b._anim-items {
+			transform: translate(50%, 0);
+			&._active {
+				transform: translate(0, 0);
+			}
+		}
+	}
+
+  // "Бренд" с 4 блоками
+	.brands_last {
+		// Большая картинка "слева-направо"
+		.brands__column._anim-items {
+			transform: translate(50%, 0);
+			&._active {
+				transform: translate(0, 0);
+			}
+		}
+		// Большая картинка "справа-налево"
+		.brands__column._rev._anim-items {
+			transform: translate(-50%, 0);
+			&._active {
+				transform: translate(0, 0);
+			}
+		}
+		// Блок с текстом
+		.brands__content._anim-items {
+			transform: translate(0, 50%);
+			&._active {
+				transform: translate(0, 0);
+			}
+		}
+	}
+
+	.slider._anim-items {
+		transition: all 2s ease 0.3s;
+		transform: scale(0);
+		&._active {
+			transform: scale(1);
+		}
+	}
+
+	.block-shop__item._anim-items {
+		transform: translate(0,50%);
+		&._active {
+		transform: translate(0,0);
+		}
+	}
+	.block-shop__item_l._anim-items {
+		transform: translate(0%,-50%);
+		&._active {
+		transform: translate(0,0);
+		}
+	}
+	.block-shop__item_b._anim-items {
+		transform: translate(50%,0);
+		&._active {
+			transform: translate(0,0);
+		}
+	}
+	.block-shop__item_b_r._anim-items {
+		transform: translate(-50%,0);
+		&._active {
+			transform: translate(0,0);
+		}
+	}
+}
